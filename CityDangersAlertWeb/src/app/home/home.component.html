@@ -1,0 +1,53 @@
+<h2>CityDangersAlert Table</h2>
+<div class="table-wrapper">
+    <table class="fl-table">
+        <thead>
+            <tr>
+                <th *ngFor = "let head of headers">
+                    {{head}}
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor = "let problem of problems">
+                <td> 
+                    {{problem.type}}
+                </td>
+                <td> 
+                    {{problem.location}}
+                </td>
+                <td> 
+                    {{problem.user}}
+                </td>
+                <td class="box"> 
+                    <select name="status" [(ngModel)] = "problem['status']" (change)="onChange(problem, $event.target)">
+                        <option value="New">New</option>
+                        <option value="In Work">In Work</option>
+                        <option value="Done">Done</option>
+                        <option value="Close">Close</option>
+                    </select>
+                </td>
+            </tr>
+            <tr *ngFor = "let problem of problems">
+                <td> 
+                    {{problem["type"]}}
+                </td>
+                <td> 
+                    {{problem["location"]}
+                </td>
+                <td> 
+                    {{problem["user"]}
+                </td>
+                <td class="box"> 
+                    <select name="status" [(ngModel)] = "problem['status']" (change)="onChange(problem, $event.target)">
+                        <option value="New">New</option>
+                        <option value="In Work">In Work</option>
+                        <option value="Done">Done</option>
+                        <option value="Close">Close</option>
+                    </select>
+                </td>
+            </tr>
+        
+        <tbody>
+    </table>
+</div>
