@@ -21,6 +21,9 @@ namespace Proiect
             services.AddScoped<IUsersRepository, UsersRepository>();
             services.AddScoped<IProblemsRepository, ProblemsRepository>();
             services.AddControllers();
+
+            services.AddCors(options => options.AddDefaultPolicy(
+                builder => builder.AllowAnyOrigin()));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -34,6 +37,8 @@ namespace Proiect
             app.UseHttpsRedirection();
 
             app.UseRouting();
+
+            app.UseCors();
 
             app.UseAuthorization();
 
