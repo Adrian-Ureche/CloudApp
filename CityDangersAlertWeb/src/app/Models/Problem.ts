@@ -1,13 +1,13 @@
 export class Problem
 {
-    type: string;
-    location: string;
+    partitionKey: string;
+    rowKey: string;
     user: string;
     status: string;
 
     constructor(type: string, location: string, user: string, status: string){
-        this.type = type;
-        this.location = location;
+        this.partitionKey = type;
+        this.rowKey = location;
         this.user = user;
         this.status = status;
     }
