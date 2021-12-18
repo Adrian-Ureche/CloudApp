@@ -49,17 +49,9 @@ namespace Proiect
         public async Task InsertNewUser(UsersEntity user)   // insert new user
         {;
 
-            var jsonUser = JsonConvert.SerializeObject(user);
-            var plainTextBytes = System.Text.Encoding.UTF8.GetBytes(jsonUser);
-            var base64String = System.Convert.ToBase64String(plainTextBytes);
+            var insertOperation = TableOperation.Insert(user);
 
-            QueueClient queueClient = new QueueClient(
-                _connectionString,
-                "user-queue"
-                );
-            queueClient.CreateIfNotExists();
-
-            await queueClient.SendMessageAsync(base64String);
+            await _usersTable.ExecuteAsync(insertOperation);
         }
 
         public async Task EditUser(UsersEntity user)   // edit users

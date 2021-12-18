@@ -57,7 +57,7 @@ namespace Proiect
 
            // return (ProblemsEntity)result.Result;
         // }
- 	public async Task InsertNewProblem(ProblemsEntity problem)   // insert new problem
+ 	public async Task InsertNewProblem(ProblemsEntity problem)   // insert new problem // trebuie facuta functia care ia din coada
         {
 
             var jsonProblem = JsonConvert.SerializeObject(problem);
