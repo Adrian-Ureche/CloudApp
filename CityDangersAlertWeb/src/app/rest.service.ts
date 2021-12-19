@@ -7,7 +7,8 @@ import { Problem } from './Models/Problem';
 })
 export class RestService {
 
-  url : string = "https://proiectdatc2021.azurewebsites.net/problems";
+  // old storage: https://proiectdatc2021.azurewebsites.net/problems
+  url : string = "https://citydangersapi.azurewebsites.net/problems";
 
   constructor(private http: HttpClient) { }
 
