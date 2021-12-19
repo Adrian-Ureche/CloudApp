@@ -21,6 +21,7 @@
         android:letterSpacing="0.03"/>
 
     <EditText
+        android:id="@+id/usernameRegistration"
         android:layout_width="350dp"
         android:layout_height="50dp"
         android:text="User name"
@@ -29,6 +30,7 @@
         android:textStyle="bold"
         android:paddingLeft="5dp"/>
     <EditText
+        android:id="@+id/passwordRegistration"
         android:layout_width="350dp"
         android:layout_height="50dp"
         android:text="Password"
@@ -39,6 +41,7 @@
         android:paddingLeft="20dp"/>
 
     <EditText
+        android:id="@+id/passwordConfirmRegistration"
         android:layout_width="350dp"
         android:layout_height="50dp"
         android:text="Confirm password"
@@ -48,6 +51,7 @@
         android:layout_marginTop="5dp"
         android:paddingLeft="20dp"/>
     <Button
+        android:id="@+id/RegistrationButton"
         android:layout_width="350dp"
         android:layout_height="50dp"
         android:background="@drawable/button"
