@@ -1,0 +1,27 @@
+[
+  {
+    "name": "PostFunction",
+    "scriptFile": "FunctionForPostProject.dll",
+    "entryPoint": "Company.Function.PostFunction.Run",
+    "language": "dotnet-isolated",
+    "properties": {
+      "IsCodeless": false
+    },
+    "bindings": [
+      {
+        "name": "myQueueItem",
+        "type": "queueTrigger",
+        "direction": "In",
+        "dataType": "String",
+        "queueName": "coadaptproiect",
+        "connection": "azurestoragetema3_STORAGE"
+      },
+      {
+        "name": "$return",
+        "type": "table",
+        "direction": "Out",
+        "tableName": "problems"
+      }
+    ]
+  }
+]

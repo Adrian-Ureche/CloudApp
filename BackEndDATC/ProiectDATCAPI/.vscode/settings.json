@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/0da34e0b-8557-4ef8-b2d5-1f3ce70ed9fa/resourceGroups/appsvc_windows_centralus3/providers/Microsoft.Web/sites/CityDangersAPI",
+    "appService.deploySubpath": "publish"
+}
