@@ -11,6 +11,7 @@ import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
 import { ChartComponent } from './chart/chart.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { ChartTypeComponent } from './chart-type/chart-type.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { NavbarComponent } from './navbar/navbar.component';
     LoginComponent,
     HomeComponent,
     ChartComponent,
-    NavbarComponent
+    NavbarComponent,
+    ChartTypeComponent,
   ],
   imports: [
     BrowserModule,
