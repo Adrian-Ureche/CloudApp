@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { assertPlatform, Component, OnInit } from '@angular/core';
 import { Problem } from '../Models/Problem';
+import { User } from '../Models/User';
 import { RestService } from '../rest.service';
 
 @Component({
@@ -20,6 +21,7 @@ export class HomeComponent implements OnInit {
 
 
   problems: Problem[] = []
+  users: User[] = []
 
 
   ngOnInit(): void {
@@ -33,7 +35,20 @@ export class HomeComponent implements OnInit {
 
           (error)=>
           {
-            console.log("Error Occured : " + error);
+            console.log("Error Occured in getProblems : " + error);
+          }
+      )
+      this.rs.getUsers().subscribe
+      (
+          (Response)=>
+          {
+              console.log(Response);
+              this.users = Response;
+          },
+
+          (error)=>
+          {
+            console.log("Error Occured in getUsers : " + error);
           }
       )
   }
@@ -58,6 +73,30 @@ export class HomeComponent implements OnInit {
             console.log("Error Occured : " + error);
           }
       )
+
+      if(target.value === "Close")
+      {
+        this.users.forEach(user => {
+          if(user.partitionKey === problemObject.user)
+          {  
+            user.discount += 1;
+            
+            this.rs.updateUser(user).subscribe
+            (
+                (Response)=>
+                {
+                  console.log("Update succesful : " + Response);
+                  console.log(user);
+                },
+
+                (error)=>
+                {
+                  console.log("Error Occured : " + error);
+                }
+            )
+          }
+        });
+      }
 
     }
 
